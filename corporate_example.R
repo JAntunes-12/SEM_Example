@@ -56,7 +56,7 @@ summary_simple_corp_rep$vif_antecedents
 
 ##### 2.2. - Bootstrap the model #####
 
-boot_simple_corp_rep <- bootstrap_model(seminr_model = df,
+boot_simple_corp_rep <- bootstrap_model(seminr_model = corp_rep_simple_model,
                                         nboot = 1000,
                                         cores = NULL,
                                         seed = 123)
