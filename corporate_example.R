@@ -1,6 +1,6 @@
--------------------------
+#########################
 #### 0 - Preliminary ####
--------------------------
+#########################
 
 # Install the package
 install.packages("seminr")
@@ -12,17 +12,13 @@ library(seminr)
 df <- corp_rep_data
 View(df) #show the data
 
-------------------------------
+##############################
 #### 1 - Model Definition ####
-------------------------------
+##############################
 
 ##### 1.1. - Measurement Model #####
 
-simple_mm <- constructs(
-  composite("COMP", multi_items("comp_", 1:3)),
-  composite("LIKE", multi_items("like_", 1:3)),
-  composite("CUSA", single_item("cusa")),
-  composite("CUSL", multi_items("cusl_", 1:3)))
+simple_mm <- constructs(composite("COMP", multi_items("comp_", 1:3)), composite("LIKE", multi_items("like_", 1:3)), composite("CUSA", single_item("cusa")), composite("CUSL", multi_items("cusl_", 1:3)))
 
 ##### 1.2. - Structural Model #####
 
@@ -30,9 +26,9 @@ simple_sm <- relationships(
   paths(from = c("COMP", "LIKE"), to = c("CUSA", "CUSL")),
   paths(from = c("CUSA"), to = c("CUSL")))
 
-------------------------------
+############################
 #### 2 - Model Analysis ####
-------------------------------
+############################
   
 ##### 2.1. - Estimate the model #####
 
